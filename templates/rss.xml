@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>IT SOC UOP</title>
+        <link>https://itsociety.co.uk/</link>
+        <description>Welcome to the RSS feed for the UOP IT SOC</description>
+        <language>en-us</language>
+        <lastBuildDate>{{ articles[0].date_posted.strftime('%a, %d %b %Y %H:%M:%S %z') }}</lastBuildDate>
+        <pubDate>{{ articles[0].date_posted.strftime('%a, %d %b %Y %H:%M:%S %z') }}</pubDate>
+        <ttl>1800</ttl>
+        {% for article in articles %}
+        <item>
+            <title>{{ article.title }}</title>
+            <link>https://itsociety.co.uk/article/{{ article.id }}</link>
+            <description>{{ article.content[::150] }}</description>
+            <pubDate>{{ article.date_posted.strftime('%a, %d %b %Y %H:%M:%S %z') }}</pubDate>
+            <guid isPermaLink="true">https://itsociety.co.uk/article/{{ article.id }}</guid>
+        </item>
+        {% endfor %}
+    </channel>
+</rss>

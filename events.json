@@ -1,0 +1,53 @@
+[
+    {
+        "title": "OSS Website",
+        "date": "2024-12-05",
+        "time": "18:00 - 20:00",
+        "location": {
+            "name": "FTC Floor 2",
+            "address": "123 Main St",
+            "url": ""
+        },
+        "description": "The launch of our website and a talk from guest speaker Rich."
+    },
+    {
+        "title": "Pub Social",
+        "date": "2024-12-06",
+        "time": "19:00 - 21:00",
+        "location": {
+            "name": "The Fleet",
+            "address": "456 Elm St"
+        },
+        "description": "Come down to the pub with us to catch up. Drinking optional Capri-Suns available."
+    },
+    {
+        "title": "Support Session",
+        "date": "2024-12-13",
+        "time": "18:00 - 20:00",
+        "location": {
+            "name": "FTC Floor 2",
+            "address": "Portsmouth PO1 3HE"
+        },
+        "description": "Need help with coursework or navigating university life? We're ready to assist you."
+    },
+    {
+        "title": "Session Roulette",
+        "date": "2024-12-19",
+        "time": "18:00 - 20:00",
+        "location": {
+            "name": "FTC Floor 2",
+            "address": "Portsmouth PO1 3HE"
+        },
+        "description": "Need help with coursework or navigating university life? We're ready to assist you."
+    },
+    {
+        "title": "Pub Social",
+        "date": "2024-12-20",
+        "time": "19:00 - 21:00",
+        "location": {
+            "name": "The Hole In The WalL",
+            "address": "36 Great Southsea St, Southsea, Portsmouth, Southsea PO5 3BY"
+        },
+        "description": "Need help with coursework or navigating university life? We're ready to assist you."
+    }
+]

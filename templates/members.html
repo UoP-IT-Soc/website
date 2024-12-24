@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include 'header.html' %}
+  <body>
+    <section id="Members" class="py-20 bg-gray-50">
+      <div class="container 2xl:px-52">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <h1 class="text-4xl font-bold mb-3">Members</h1>
+          <p class="text-gray-600">Meet the amazing members of our community.</p>
+        </div>
+        <div class="flex flex-wrap justify-center">
+          {% if members %}
+            {% for member in members %}
+              <div class="w-64 h-auto bg-white shadow-lg rounded-lg m-4 p-6">
+                <div class="flex justify-center">
+                  <img
+                    class="w-32 h-32 rounded-full"
+                    src="{{ member.image }}"
+                    alt="{{ member.name }}'s profile picture"
+                  />
+                </div>
+                <div class="text-center mt-4">
+                  <h2 class="text-xl font-bold">{{ member.name }}</h2>
+                  {% if member.role %}
+                    <p class="text-gray-500 mt-2">{{ member.role }}</p>
+                  {% endif %}
+                  <p class="text-gray-500 mt-2">{{ member.level}}</p>
+                  <p class="text-gray-500 mt-2">Class Of {{ member.class_of }}</p>
+
+                  <p class="text-gray-500 mt-2">{{ member.bio }}</p>
+                  <div class="flex justify-center mt-4 space-x-4">
+                    {% if member.website %}
+                      <a href="{{ member.website }}" class="text-blue-500 hover:text-blue-700" title="Website">
+                        <i class="fas fa-globe fa-lg"></i>
+                      </a>
+                    {% endif %}
+                    {% if member.twitter %}
+                      <a href="{{ member.twitter }}" class="text-blue-500 hover:text-blue-700" title="Twitter">
+                        <i class="fab fa-twitter fa-lg"></i>
+                      </a>
+                    {% endif %}
+                    {% if member.github %}
+                      <a href="{{ member.github }}" class="text-blue-500 hover:text-blue-700" title="GitHub">
+                        <i class="fab fa-github fa-lg"></i>
+                      </a>
+                    {% endif %}
+                    {% if member.linkedin %}
+                      <a href="{{ member.linkedin }}" class="text-blue-500 hover:text-blue-700" title="LinkedIn">
+                        <i class="fab fa-linkedin fa-lg"></i>
+                      </a>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          {% else %}
+            <p class="text-gray-500 text-center mt-10">No members found. Check back later!</p>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+  </body>
+  {% include 'footer.html' %}
+</html>

@@ -1,0 +1,95 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>UoP IT Society</title>
+    <meta name="title" content="UoP IT Society" />
+    <meta
+      name="description"
+      content="The university of Portsmouth IT Society"
+    />
+    <link rel="shortcut icon" href="/static/images/IT_SOC.png" type="image/x-icon" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://itsociety.co.uk/" />
+    <meta property="og:title" content="UoP IT Society" />
+    <meta
+      property="og:description"
+      content="The university of Portsmouth IT Society"
+    />
+    <meta
+      property="og:image"
+      content="https://itsociety.co.uk/images/IT_SOC.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://itsociety.co.uk/" />
+    <meta property="twitter:title" content="UoP IT Society" />
+    <meta
+      property="twitter:description"
+      content="The university of Portsmouth IT Society"
+    />
+    <meta
+      property="twitter:image"
+      content="https://itsociety.co.uk/images/IT_SOC.png"
+    />
+
+    <!-- CSS -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/reset.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/app.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/committee.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/bootstrap.min.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+
+    <!-- CSS:Events -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/events/events.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/events/events.responsiveness.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/events/colours.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  </head>
+
+  <header>
+    <nav id="primary-menu" class="navbar" style="background-color: #ffffff;">
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#navbar-collapse-1"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class="" href="/">
+            <img
+              class="logo-dark w-16 h-16 rounded-lg"
+              src="/static/images/IT_SOC.png"
+              alt="Logo"
+            />
+          </a>
+        </div>
+        <div class="collapse navbar-collapse pull-right" id="navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-left nav-split nav-pos-right">
+            <li class="active">
+              <a data-scroll="scrollTo" href="/#hero">home</a>
+            </li>
+            <li><a data-scroll="scrollTo" href="/#committee">Committee</a></li>
+            <li><a data-scroll="scrollTo" href="/#events">Events</a></li>
+            <li><a data-scroll="scrollTo" href="/#contact">Contact</a></li>
+            <li><a data-scroll="scrollTo" href="/members">Members</a></li>
+            <li><a data-scroll="scrollTo" href="/news/0">News</a></li>
+          </ul>
+        </div>
+        <!--/.nav-collapse -->
+      </div>
+    </nav>
+  </header>

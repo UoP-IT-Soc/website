@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include 'header.html' %}
+    
+  <body>
+    <!-- Hero -->
+    <!-- <section id="hero" class="section hero hero-12 text-center bg-overlay bg-overlay-dark bg-parallax fullscreen"> -->
+    <section id="hero" class="section text-center no-p-top">
+      <div class="bg-section">
+        <img src="/static/images/Banner.png" alt="Background" />
+      </div>
+      <div class="pos-vertical-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="hero--content">
+                <!-- <h1 class="hero-headline">UoP IT Society</h1> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="gap">
+        <div class="container">
+          <div class="abt-sec style-edit">
+            <div class="row">
+              <div class="col-md-7 col-sm-12 col-lg-7">
+                <div class="abt-cnt">
+                  <div class="sec-tl">
+                    <span>The place to be for all things computing</span>
+                    <h2 itemprop="headline">
+                      About <span class="theme-clr">The IT Society</span>
+                    </h2>
+                  </div>
+                  <!-- Sec Title -->
+                  <div class="abt-desc">
+                    <p itemprop="description">
+                        The IT Society is an academic and social group aimed at supporting students who are taking a computing-based course or are interested in learning about IT. We run sessions covering all disciplines, from coding to cyber security to networking, we have something for everyone. We meet every Thursday in the FTC building and have bi-weekly socials. In our sessions, we run a number of workshops, talks, and events throughout the year.
+                    </p>
+                    <h3 itemprop="headline">Regular Activities</h3>
+                    <ul>
+                      <li>Hackathons</li>
+                      <li>Capture the flag</li>
+                      <li>Talks from industry</li>
+                      <li>Support sessions</li>
+                      <li>Learning a skill night</li>
+                      <li>Fortnightly Pub</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-5 col-sm-12 col-lg-5">
+                <div class="abt-img style2">
+                    <!-- Someone please for the love of god and all that is holy change this -->
+                     <!-- I can't find any better images right now :(-->
+                  <img
+                    src="/static/images/IT_SOC.png"
+                    alt="abt-img3.jpg"
+                    itemprop="image"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events">
+      <div class="gap">
+        <div class="container">
+          <div class="sec-tl text-center">
+            <h2>
+              Upcoming <span class="bg-theme-clr">Events</span>
+            </h2>
+          </div>
+          <!-- Sec Title -->
+          <div class="evnt-sec remove-ext5">
+            <div class="row">
+              {% for event in events %}
+              <!-- Event -->
+              <div class="col-md-4 col-sm-6 col-lg-4">
+                <div class="evnt-bx2">
+                  <div class="evnt-inf">
+                    <h5>
+                      {{ event['title'] }}
+                    </h5>
+                    <p>
+                      {{ event['description'] }}
+                    </p>
+                    <div class="pst-mta-wrp">
+                      <span class="evnt-dat">
+                        <a href="#" title="">{{ event['date']|format_date }}</a>
+                      </span>                      
+                      <ul class="pst-mta">
+                        <li>
+                          <i class="fas fa-map-marker-alt theme-clr"></i> {{ event['location']['name'] }}
+                        </li>
+                        {% if event['location'].get('address') %}
+                        <li>
+                          {{ event['location']['address'] }}
+                        </li>
+                        {% endif %}
+                        {% if event['location'].get('url') %}
+                        <li>
+                          <a href="{{ event['location']['url'] }}" target="_blank">Join Online</a>
+                        </li>
+                        {% endif %}
+                        <li>
+                          <i class="far fa-clock theme-clr"></i> {{ event['time'] }}
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          <!-- Events Sec -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Committee -->
+
+    <section id="committee" class="py-20 bg-gray-50">
+      <div class="container 2xl:px-52">
+        <div class="text-center max-w-2xl mx-auto">
+          <h1 class="text-4xl font-bold mb-3">Our Current Committee</h1>
+        </div>
+
+        <div class="mt-14">
+          <div class="grid lg:grid-cols-6 sm:grid-cols-2 gap-6">
+            <div class="col-span-2">
+              <div class="bg-white shadow rounded-md text-center p-7">
+                <img
+                  src="/static/images/committee/Brendan.png"
+                  alt="Picture of Brendan"
+                  class="rounded-full shadow-md border-4 border-white h-28 w-28 mx-auto"
+                />
+
+                <div class="mt-7">
+                  <h3 class="text-2xl font-bold mb-0.5">Brendan Skeet</h3>
+                  <p class="font-medium text-gray-500 mb-4">President</p>
+                  <p class="text-gray-500">
+                    Computer Science<br>
+                    Masters<br>
+                    He/Him<br>
+                    Hates Computers
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-span-2">
+              <div class="bg-white shadow rounded-md text-center p-7">
+                <img
+                  src="/static/images/committee/Anna.jpg"
+                  alt=""
+                  class="rounded-full shadow-md border-4 border-white h-28 w-28 mx-auto"
+                />
+
+                <div class="mt-7">
+                  <h3 class="text-2xl font-bold mb-0.5">Anna Kennewell</h3>
+                  <p class="font-medium text-gray-500 mb-4">Treasurer</p>
+                  <p class="text-gray-500">Computer Science 
+                      <br>2nd Year
+                      <br>She/Her
+                      <br>Lover of hackathons, comnpetitive coding and spreadsheets</p>
+    <div class="flex items-center justify-center gap-4 mt-7">
+                    <a
+                      href="https://www.linkedin.com/in/anna-k-431206333/"
+                      class="bg-sky-700 shadow rounded-full flex items-center justify-center h-9 w-9"
+                    >
+                      <svg
+                        class="fill-white h-6 w-6"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 124 124"
+                        id="linkedin"
+                      >
+                        <path
+                          d="M102.4 70.7v28.5c0 .7-.6 1.3-1.3 1.3H86.4c-.7 0-1.3-.6-1.3-1.3V72.7c0-7-2.5-11.8-8.8-11.8-4.8 0-7.6 3.2-8.9 6.3-.5 1.1-.6 2.7-.6 4.2v27.8c0 .7-.6 1.3-1.3 1.3H50.9c-.7 0-1.3-.6-1.3-1.3 0-7.1.2-41.4 0-49.4 0-.7.6-1.3 1.3-1.3h14.7c.7 0 1.3.6 1.3 1.3v6.1c0 .1-.1.1-.1.2h.1v-.2c2.3-3.5 6.4-8.6 15.6-8.6 11.4 0 19.9 7.5 19.9 23.4zM24 100.6h14.7c.7 0 1.3-.6 1.3-1.3V49.8c0-.7-.6-1.3-1.3-1.3H24c-.7 0-1.3.6-1.3 1.3v49.5c.1.7.6 1.3 1.3 1.3z"
+                        ></path>
+                        <circle cx="30.9" cy="32.7" r="9.3"></circle>
+                      </svg>
+                    </a>
+                    <a
+                      href="https://github.com/AWell35"
+                      class="bg-black shadow rounded-full flex items-center justify-center h-9 w-9"
+                    >
+                      <svg
+                        class="fill-white h-16 w-16"
+                        xmlns="http://www.w3.org/2000/svg"
+                        data-name="Layer 1"
+                        viewBox="0 0 24 24"
+                        id="github"
+                      >
+                        <path
+                          d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-span-2">
+              <div class="bg-white shadow rounded-md text-center p-7">
+                <img
+                  src="/static/images/committee/keita.jpg"
+                  alt="Picture of Keita"
+                  class="rounded-full shadow-md border-4 border-white h-28 w-28 mx-auto"
+                />
+
+                <div class="mt-7">
+                  <h3 class="text-2xl font-bold mb-0.5">Keita Vebere</h3>
+                  <p class="font-medium text-gray-500 mb-4">Welfare Officer</p>
+                  <p class="text-gray-500">
+                      Software Engineer<br>
+                      2nd Year<br>
+                      She/Her<br>
+                      Tea addicted dork that likes hamsters
+                  </p>
+
+                  <div class="flex items-center justify-center gap-4 mt-7">
+                    <a
+                      href="https://www.linkedin.com/in/keita-vebere-5709822a3/"
+                      class="bg-sky-700 shadow rounded-full flex items-center justify-center h-9 w-9"
+                    >
+                      <svg
+                        class="fill-white h-6 w-6"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 124 124"
+                        id="linkedin"
+                      >
+                        <path
+                          d="M102.4 70.7v28.5c0 .7-.6 1.3-1.3 1.3H86.4c-.7 0-1.3-.6-1.3-1.3V72.7c0-7-2.5-11.8-8.8-11.8-4.8 0-7.6 3.2-8.9 6.3-.5 1.1-.6 2.7-.6 4.2v27.8c0 .7-.6 1.3-1.3 1.3H50.9c-.7 0-1.3-.6-1.3-1.3 0-7.1.2-41.4 0-49.4 0-.7.6-1.3 1.3-1.3h14.7c.7 0 1.3.6 1.3 1.3v6.1c0 .1-.1.1-.1.2h.1v-.2c2.3-3.5 6.4-8.6 15.6-8.6 11.4 0 19.9 7.5 19.9 23.4zM24 100.6h14.7c.7 0 1.3-.6 1.3-1.3V49.8c0-.7-.6-1.3-1.3-1.3H24c-.7 0-1.3.6-1.3 1.3v49.5c.1.7.6 1.3 1.3 1.3z"
+                        ></path>
+                        <circle cx="30.9" cy="32.7" r="9.3"></circle>
+                      </svg>
+                    </a>
+                    <a
+                      href="https://github.com/KVebere"
+                      class="bg-black shadow rounded-full flex items-center justify-center h-9 w-9"
+                    >
+                      <svg
+                        class="fill-white h-16 w-16"
+                        xmlns="http://www.w3.org/2000/svg"
+                        data-name="Layer 1"
+                        viewBox="0 0 24 24"
+                        id="github"
+                      >
+                        <path
+                          d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <!-- Bodge to make the two cards in the middle-->
+            </div>
+
+            <div class="col-span-2">
+              <div class="bg-white shadow rounded-md text-center p-7">
+                <img
+                  src="/static/images/committee/sam.jpg"
+                  alt="Picture of Sam"
+                  class="rounded-full shadow-md border-4 border-white h-28 w-28 mx-auto"
+                />
+
+                <div class="mt-7">
+                  <h3 class="text-2xl font-bold mb-0.5">Sam Blewitt</h3>
+                  <p class="font-medium text-gray-500 mb-4">
+                    Social Media Secretary
+                  </p>
+                  <p class="text-gray-500">
+                    Computer Science<br>
+                    2nd Year<br>
+                    He/Him<br>
+                    <span class="yellow">⚠</span> Will not stop talking about planes <span class="yellow">⚠</span>
+                  </p>
+
+                  <div class="flex items-center justify-center gap-4 mt-7">
+                    <a
+                      href="https://linkedin.com/in/sam-blewitt"
+                      class="bg-sky-700 shadow rounded-full flex items-center justify-center h-9 w-9"
+                    >
+                      <svg
+                        class="fill-white h-6 w-6"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 124 124"
+                        id="linkedin"
+                      >
+                        <path
+                          d="M102.4 70.7v28.5c0 .7-.6 1.3-1.3 1.3H86.4c-.7 0-1.3-.6-1.3-1.3V72.7c0-7-2.5-11.8-8.8-11.8-4.8 0-7.6 3.2-8.9 6.3-.5 1.1-.6 2.7-.6 4.2v27.8c0 .7-.6 1.3-1.3 1.3H50.9c-.7 0-1.3-.6-1.3-1.3 0-7.1.2-41.4 0-49.4 0-.7.6-1.3 1.3-1.3h14.7c.7 0 1.3.6 1.3 1.3v6.1c0 .1-.1.1-.1.2h.1v-.2c2.3-3.5 6.4-8.6 15.6-8.6 11.4 0 19.9 7.5 19.9 23.4zM24 100.6h14.7c.7 0 1.3-.6 1.3-1.3V49.8c0-.7-.6-1.3-1.3-1.3H24c-.7 0-1.3.6-1.3 1.3v49.5c.1.7.6 1.3 1.3 1.3z"
+                        ></path>
+                        <circle cx="30.9" cy="32.7" r="9.3"></circle>
+                      </svg>
+                    </a>
+                    <a
+                      href="https://sambot.dev"
+                      class="shadow rounded-full flex items-center justify-center h-9 w-9"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        id="website"
+                      >
+                        <g fill="none" stroke="currentColor" stroke-width="1.5">
+                          <path
+                            d="M22 12a10 10 0 1 1-20.001 0A10 10 0 0 1 22 12Z"
+                          />
+                          <path
+                            d="M16 12c0 1.313-.104 2.614-.305 3.827c-.2 1.213-.495 2.315-.867 3.244c-.371.929-.812 1.665-1.297 2.168c-.486.502-1.006.761-1.531.761s-1.045-.259-1.53-.761c-.486-.503-.927-1.24-1.298-2.168c-.372-.929-.667-2.03-.868-3.244A23.6 23.6 0 0 1 8 12c0-1.313.103-2.614.304-3.827s.496-2.315.868-3.244c.371-.929.812-1.665 1.297-2.168C10.955 2.26 11.475 2 12 2s1.045.259 1.53.761c.486.503.927 1.24 1.298 2.168c.372.929.667 2.03.867 3.244C15.897 9.386 16 10.687 16 12Z"
+                          />
+                          <path stroke-linecap="round" d="M2 12h20" />
+                        </g>
+                      </svg>
+                    </a>
+                    <a
+                      href="https://github.com/wotanut"
+                      class="bg-black shadow rounded-full flex items-center justify-center h-9 w-9"
+                    >
+                      <svg
+                        class="fill-white h-16 w-16"
+                        xmlns="http://www.w3.org/2000/svg"
+                        data-name="Layer 1"
+                        viewBox="0 0 24 24"
+                        id="github"
+                      >
+                        <path
+                          d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-span-2">
+              <div class="bg-white shadow rounded-md text-center p-7">
+                <img
+                  src="/static/images/committee/mohammed.png"
+                  alt=""
+                  class="rounded-full shadow-md border-4 border-white h-28 w-28 mx-auto"
+                />
+
+                <div class="mt-7">
+                  <h3 class="text-2xl font-bold mb-0.5">Mohammed Elfayez</h3>
+                  <p class="font-medium text-gray-500 mb-4">Events Secretary</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TODO: Add past committee -->
+        <!-- TODO: Add GitHub contributors -->
+        <!-- FIXME: Make external links open in new tab-->
+      </div>
+    </section>
+
+    <!-- Footer -->
+
+    {% include 'footer.html' %}
+  </body>
+</html>
+
